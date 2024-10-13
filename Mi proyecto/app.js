@@ -25,3 +25,4 @@ async function sendMessageToChatbot(message) {
     const chatbotReply = data.choices[0].message.content;
     console.log("Respuesta del chatbot: " + chatbotReply);
 }
+
