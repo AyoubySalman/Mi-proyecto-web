@@ -25,4 +25,17 @@ async function sendMessageToChatbot(message) {
     const chatbotReply = data.choices[0].message.content;
     console.log("Respuesta del chatbot: " + chatbotReply);
 }
+// Esto será para la lógica de registro y login
+function loginUser(email, password) {
+    // Lógica para verificar las credenciales
+    if (email && password) { 
+        console.log("Usuario logueado: " + email); // mensaje de confirmación
+        window.location.href = "dashboard.html"; // redirección al dashboard
+    }
+}
+
+function registerUser(email, password) {
+    console.log("Usuario registrado: " + email);
+    // Registro completo, puedes redirigir al dashboard o inicio de sesión
+}
 
