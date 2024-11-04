@@ -25,3 +25,27 @@ async function sendMessageToChatbot(message) {
     const chatbotReply = data.choices[0].message.content;
     console.log("Respuesta del chatbot: " + chatbotReply);
 }
+// app.js
+
+function loginUser(email, password) {
+    // Verifica si el correo y contraseña coinciden con los registrados
+    const registeredEmail = localStorage.getItem("userEmail");
+    const registeredPassword = localStorage.getItem("userPassword");
+
+    if (email === registeredEmail && password === registeredPassword) {
+        alert("Inicio de sesión exitoso. ¡Bienvenido!");
+        // Aquí podrías redirigir a una página de bienvenida o dashboard
+    } else {
+        alert("Correo o contraseña incorrectos.");
+    }
+}
+
+// Captura el evento de inicio de sesión
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    
+    loginUser(email, password);
+});
