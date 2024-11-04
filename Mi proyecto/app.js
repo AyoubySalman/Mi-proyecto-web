@@ -1,10 +1,25 @@
-// Esto será para la lógica de registro y login
+// Lógica de registro y login
 function loginUser(email, password) {
-    console.log("Usuario logueado: " + email);
+    // Verifica si el correo y contraseña coinciden con los registrados
+    const registeredEmail = localStorage.getItem("userEmail");
+    const registeredPassword = localStorage.getItem("userPassword");
+
+    if (email === registeredEmail && password === registeredPassword) {
+        alert("Inicio de sesión exitoso. ¡Bienvenido!");
+        // Redirigir a una página de dashboard o bienvenida
+        window.location.href = 'dashboard.html'; // Cambia 'dashboard.html' al nombre real de tu página
+    } else {
+        alert("Correo o contraseña incorrectos.");
+    }
 }
 
 function registerUser(email, password) {
-    console.log("Usuario registrado: " + email);
+    // Guardar el correo y la contraseña en localStorage
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
+    alert("Usuario registrado exitosamente.");
+    // Redirigir a la página de inicio de sesión
+    window.location.href = 'login.html'; // Cambia 'login.html' al nombre real de tu página
 }
 
 // Lógica para el chatbot
@@ -25,27 +40,23 @@ async function sendMessageToChatbot(message) {
     const chatbotReply = data.choices[0].message.content;
     console.log("Respuesta del chatbot: " + chatbotReply);
 }
-// app.js
 
-function loginUser(email, password) {
-    // Verifica si el correo y contraseña coinciden con los registrados
-    const registeredEmail = localStorage.getItem("userEmail");
-    const registeredPassword = localStorage.getItem("userPassword");
-
-    if (email === registeredEmail && password === registeredPassword) {
-        alert("Inicio de sesión exitoso. ¡Bienvenido!");
-        // Aquí podrías redirigir a una página de bienvenida o dashboard
-    } else {
-        alert("Correo o contraseña incorrectos.");
-    }
-}
+// Captura el evento de registro
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    
+    registerUser(email, password);
+});
 
 // Captura el evento de inicio de sesión
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
     
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById("email").value; // Usa el ID correcto
+    const password = document.getElementById("password").value; // Usa el ID correcto
     
     loginUser(email, password);
 });
