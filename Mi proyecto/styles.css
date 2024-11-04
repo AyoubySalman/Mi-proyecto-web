@@ -53,3 +53,9 @@ footer {
     width: 100%;
     bottom: 0;
 }
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Cambia a diseño vertical en móviles */
+        margin: 10px 0; /* Espacio entre los elementos */
+    }
+}
