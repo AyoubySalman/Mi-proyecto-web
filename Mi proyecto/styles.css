@@ -1,1 +1,167 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
+/* Estilo para el encabezado */
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Estilos para la navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para las secciones */
+section {
+    padding: 2rem;
+    margin-bottom: 2rem; /* Espaciado entre secciones */
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5); /* Mejor accesibilidad al hacer focus */
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Cambia a diseño vertical en móviles */
+        margin: 10px 0; /* Espacio entre los elementos */
+    }
+
+    button {
+        width: 100%; /* Los botones ocupan todo el ancho en móviles */
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}
+
+/* Estilo para el contenedor del chatbot */
+.chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 300px; /* Cambiado a max-height para hacerla más flexible */
+    overflow-y: auto;
+    background-color: white;
+    margin-top: 15px;
+}
+
+/* Estilo para las respuestas del chatbot */
+.chatbot-reply {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilo para los mensajes del usuario */
+.user-message {
+    background-color: #0073e6;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: right;
+}
+
+/* Mejoras para la accesibilidad visual (daltonismo y alto contraste) */
+body {
+    background-color: #ffffff; /* Fondo blanco para mayor contraste */
+    color: #333333; /* Color de texto oscuro */
+}
+
+/* Mejora la visibilidad de los enlaces para personas con daltonismo */
+nav ul li a {
+    color: #1a73e8; /* Azul más visible */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #005bb5; /* Mejor contraste en hover */
+}
+
+/* Mejora la visibilidad de los botones */
+button {
+    background-color: #005bb5; /* Botones de color azul más fuerte */
+    color: white;
+}
+
+button:hover {
+    background-color: #003f7d; /* Color más oscuro en hover */
+}
+
+/* Agrega un borde visible al hacer hover en los enlaces */
+a:focus, button:focus {
+    outline: 3px solid #005bb5; /* Borde de alto contraste para mejor visibilidad */
+}
+
+/* Fondo más visible para el contenedor del chatbot */
+.chat-container {
+    background-color: #ffffff; /* Blanco para un mayor contraste */
+}
+
+/* Mejoras en la legibilidad para personas con discapacidad visual */
+section {
+    line-height: 1.6; /* Mayor espacio entre líneas */
+}
+
+/* Aumentar el tamaño de los botones y enlaces en dispositivos móviles */
+@media (max-width: 600px) {
+    button {
+        font-size: 18px; /* Aumentar tamaño de botón en móviles */
+        padding: 15px; /* Más espacio en los botones */
+    }
+    nav ul li a {
+        font-size: 18px; /* Aumentar tamaño de los enlaces en móviles */
+    }
+}
